@@ -226,6 +226,11 @@ a.site-name {
 @media (min-width: 68em) {
 
 	.photo-gallery {
+		/* Create a grid, make all children grid items */
+		display: grid;
+
+		/* Create 3 columns, 300px wide each */
+		grid-template-columns: repeat(3, 18.75rem);
 
 	}
 
