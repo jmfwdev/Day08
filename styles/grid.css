@@ -216,7 +216,7 @@ a.site-name {
 
 	/* Section 2 - Cards */
 	.grid-center.cards {
-		margin: 1rem;
+		padding: 1rem;
 		display: grid;
 		grid-template-columns: 15rem 15rem 15rem;
 		grid-template-rows: 15rem 15rem;
@@ -224,13 +224,13 @@ a.site-name {
 		gap: 0 1rem;
 	}
 
-	.grid-center-cards p {
+	.grid-center.cards p {
 		margin: 1rem;
 	}
 	/* Section 3 - Large Text */
 	.grid-center.large-text {
 		display: grid;
-		grid-template-columns: 15rem 15rem 15rem;
+		grid-template-columns: repeat(3, 15rem);
 		grid-template-rows: 15rem;
 		justify-content: center;
 		background-color: gray;
@@ -262,6 +262,7 @@ a.site-name {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 1fr);
+		margin-bottom: 1rem;
 	}
 
 	.grid-map div {
