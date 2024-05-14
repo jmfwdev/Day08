@@ -254,10 +254,8 @@ a.site-name {
 		/* grid-template-rows: auto auto; */
 		/* grid-template-rows: 10rem 18.75rem auto; */
 
-
-		
-
-		
+		gap: 1rem;
+		justify-content: center;
 
 	}
 
@@ -274,6 +272,8 @@ a.site-name {
 	}
 
 	.large-image img {
+		object-fit: cover;
+		object-position: left bottom;
 
 	}
 
