@@ -97,25 +97,40 @@ a:active {
 @media screen and (min-width: 68em) {
 
 	.site-wrapper {
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 53rem) minmax(auto, 22rem) 1fr;
 		
+		grid-template-areas: 
+			"header header header header"
+			". main sidebar ."
+			"footer footer footer footer";
+	}
+
+	.site-wrapper.sidebar-left {
+
+		grid-template-columns: 1fr minmax(auto, 22rem) minmax(auto, 53rem) 1fr;
+
+		grid-template-areas:
+		"header header header header"
+		". sidebar main ."
+		"footer footer footer footer";
 	}
 
 	.site-header {
-		
+		grid-area: header;
 	}
 
 	.site-main {
-		
+		grid-area: main;
 	}
 
 	.site-sidebar {
-		
+		grid-area: sidebar;
 	}
 
 	.site-footer {
-		
+		grid-area: footer;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -191,11 +206,13 @@ a.site-name {
 	}
 
 	.site-header {
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 22rem) minmax(auto, 53rem) 1fr;
 		
 	}
 
 	.site-name {
-		
+		grid-column: 2 / 3;
 	}
 
 	.site-navigation {
@@ -220,13 +237,46 @@ a.site-name {
 /* Main
 --------------------------------------------- */
 .site-main {
-	padding: 0 5rem;
+	/* padding: 0 5rem; */
 }
 
 @media (min-width: 68em) {
 
 	.photo-gallery {
+		/* Create a grid, make all children grid items */
+		display: grid;
 
+		/* Create 3 columns, 300px wide each */
+		/* grid-template-columns: 18.75rem 18.75rem 18.75rem; */
+
+		/* Create 4 columns, 200 px wide each */
+		grid-template-columns: repeat(4, 12.5rem);
+
+		/* Make all automatically generated rows 200px each */
+		grid-auto-rows: 12.5rem;
+
+		/* Create 3 columns of equal width to fill the grid container */
+		/* grid-template-columns: 1fr 1fr 1fr; */
+
+		/* Create 3 columns. first two are 300px, the last one will fill the remaining space */
+		/* grid-template-columns: repeat(2, 18.75rem) 1fr; */
+
+		/* Create 3 columns first two are 300px, the last one is minimum 300px and maximum the remaining space in the grid container */
+		/* grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr); */
+
+		/* Create two rows, 200px height each */
+		/* grid-template-rows: 12.5rem 12.5rem; */
+
+		/* Set all row height based on the content inside the grid items -- This is the default value*/
+		/* grid-template-rows: auto auto; */
+		/* grid-template-rows: 10rem 18.75rem auto; */
+
+		gap: 1rem;
+		justify-content: center;
+
+		/* These are the default */
+		align-items: stretch;
+		justify-items: stretch;
 	}
 
 	.photo-gallery img {
@@ -236,10 +286,14 @@ a.site-name {
 	}
 
 	.large-image {
+		/* grid-column: 2 / 4; */
+		grid-column: span 2;
 
 	}
 
 	.large-image img {
+		object-fit: cover;
+		object-position: left bottom;
 
 	}
 
@@ -247,6 +301,14 @@ a.site-name {
 		background-color: #444444;
 		color: #ffffff;
 		padding: 1rem 2rem;
+		/* option 1 */
+		grid-row: span 2;
+		grid-column: span 2;
+		order: -1;
+
+		/* option 2 */
+		grid-column: 1 / 3;
+		grid-row: 1 / 3;
 	}
 
 }
