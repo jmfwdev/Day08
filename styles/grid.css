@@ -188,34 +188,80 @@ a.site-name {
 
 /* Section 1 - Banner */
 .banner {
-	
+	position: relative;
 }
 
 .banner h1 {
-	
+	color: white;
+	position: absolute;
+	top: 15rem;
+	right: 0;
+	left: 0;
+	backdrop-filter: blur(0.5rem);
+	border-radius: 50%;
+	border: 3rem;
+	justify-self: center;
+	padding: 2rem;
+	z-index: 1;
 }
 
 .banner img {
-	
+	object-fit: cover;
+	object-position: bottom;
+	height: 35rem;
+	width: 100%;
 }
 
 @media screen and (min-width: 50em) {
 
 	/* Section 2 - Cards */
-	
+	.grid-center.cards {
+		margin: 1rem;
+		display: grid;
+		grid-template-columns: 15rem 15rem 15rem;
+		grid-template-rows: 15rem 15rem;
+		justify-content: center;
+		gap: 0 1rem;
+	}
 
-
+	.grid-center-cards p {
+		margin: 1rem;
+	}
 	/* Section 3 - Large Text */
-	
+	.grid-center.large-text {
+		display: grid;
+		grid-template-columns: 15rem 15rem 15rem;
+		grid-template-rows: 15rem;
+		justify-content: center;
+		background-color: gray;
+	}
 
+	.grid-center.large-text div {
+		grid-column: 1 / 4;
+		margin: 1rem;
+		color: white;
+	}
 
 	/* Section 4 - Full Width Boxes */
-	
+	.grid-full {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		gap: .5rem;
+	}
+
+	.grid-full-item {
+		background-color: orange;
+		padding: 1rem;
+	}
 
 
 	/* Section 5 - Grid Map */
 	.grid-map {
-		
+		gap: 1rem;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(4, 1fr);
 	}
 
 	.grid-map div {
@@ -226,18 +272,26 @@ a.site-name {
 
 	.grid-map .park {
 		background-color: #69c869;
+		grid-column: 2 / 4;
+		grid-row: 2 / 4;
 	}
 
 	.grid-map .building {
 		background-color: #a60000;
+		grid-column: 5 / 6;
+		grid-row: 1 / 3;
 	}
 
 	.grid-map .retail {
 		background-color: #825099;
+		grid-column: 1 / 2;
+		grid-row: 2 / 4;
 	}
 
 	.grid-map .school {
 		background-color: #f2d254;
+		grid-column: 4 / 6;
+		grid-row: 4 / 5;
 	}
 }
 
