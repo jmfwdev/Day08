@@ -230,7 +230,13 @@ a.site-name {
 		display: grid;
 
 		/* Create 3 columns, 300px wide each */
-		grid-template-columns: repeat(3, 18.75rem);
+		grid-template-columns: 18.75rem 18.75rem 18.75rem;
+
+		/* Create two rows, 200px height each */
+		/* grid-template-rows: 12.5rem 12.5rem; */
+
+		/* Set all row height based on the content inside the grid items -- This is the default value*/
+		grid-template-rows: auto auto;
 
 	}
 
